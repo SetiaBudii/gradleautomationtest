@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     tools {
-        // Assuming Gradle version is specified in your Jenkins Global Tool Configuration
-        gradle 'Gradle' 
+        gradle 'Gradle' // Assuming Gradle version is configured in Jenkins Global Tool Configuration
         jdk 'JDK 11'       
     }
 
@@ -21,19 +20,21 @@ pipeline {
 
         stage('Build') {
             steps {
+                sh 'chmod +x ./gradlew' // Grant execute permission to gradlew
                 sh './gradlew clean build'
             }
         }
 
         stage('Test') {
             steps {
+                sh 'chmod +x ./gradlew' // Grant execute permission to gradlew
                 sh './gradlew test'
             }
         }
 
         stage('Generate Report') {
             steps {
-                // Assuming you have a task in your Gradle build to generate a report
+                sh 'chmod +x ./gradlew' // Grant execute permission to gradlew
                 sh './gradlew generateReport'
             }
         }
