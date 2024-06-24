@@ -9,8 +9,8 @@ pipeline {
     environment {
         JAVA_HOME = tool name: 'JDK 11', type: 'jdk'
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
-        BUILD_ID = env.BUILD_ID ?: "NoBuildID"
-        BUILD_NAME = env.JOB_NAME ?: "NoJobName"
+        buildName "${GERRIT_CHANGE_SUBJECT}"
+        buildDescription "Executed @ ${NODE_NAME}"
     }
 
     stages {
