@@ -32,18 +32,18 @@ pipeline {
             }
         }
 
-        stage('Generate Report') {
-            steps {
-                sh 'chmod +x ./gradlew' // Grant execute permission to gradlew
-                sh './gradlew generateReport'
-            }
-        }
-    }
+    //     stage('Generate Report') {
+    //         steps {
+    //             sh 'chmod +x ./gradlew' // Grant execute permission to gradlew
+    //             sh './gradlew generateReport'
+    //         }
+    //     }
+    // }
 
-    post {
-        always {
-            archiveArtifacts artifacts: 'screenshots/*.png', allowEmptyArchive: true
-            // Additional post-build actions specific to Gradle can be added here
-        }
-    }
+    // post {
+    //     always {
+    //         archiveArtifacts artifacts: 'screenshots/*.png', allowEmptyArchive: true
+    //         // Additional post-build actions specific to Gradle can be added here
+    //     }
+    // }
 }
