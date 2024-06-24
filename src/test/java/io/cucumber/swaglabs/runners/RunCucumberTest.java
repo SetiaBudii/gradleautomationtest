@@ -12,6 +12,7 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 @IncludeEngines("cucumber")
 @SelectPackages("io.cucumber.swaglabs")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "json:result/cucumber-report.json")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "io.cucumber.swaglabs")
 public class RunCucumberTest {
 }
